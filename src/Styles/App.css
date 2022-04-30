@@ -1,0 +1,132 @@
+.title {
+  text-align: center;
+  color: rgb(43, 48, 54);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 7vh;
+  text-shadow: #343a40 --2px;
+}
+.icon {
+  text-align: center;
+  color: rgb(102, 102, 102);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
+}
+.footer {
+  background-color: rgb(43, 48, 54);
+  color: aliceblue;
+  text-align: center;
+  font-size: 14px;
+  margin: 0px;
+  margin-top: 100px;
+  padding: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.title-small {
+  text-align: center;
+  color: rgb(165, 175, 175);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+h3 {
+  text-align: center;
+  color: rgb(43, 48, 54);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+
+  text-shadow: #343a40 --2px;
+}
+.h50 {
+  height: 50px;
+}
+.h30 {
+  height: 30px;
+}
+.h10 {
+  height: 10px;
+}
+.quotetable {
+  text-align: left;
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-shadow: #343a40 --2px;
+  height: 100;
+}
+.logo {
+  height: 32px;
+  width: 32px;
+}
+.date {
+  padding: "10px";
+}
+.table_history {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 300px;
+  width: 100%;
+}
+.table_stock {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 600px;
+  width: 100%;
+  color: #000000e0;
+}
+.context {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 16px;
+  text-align: center;
+  padding: 1em;
+}
+#btnGroupAddon {
+  background-color: #000000e0;
+  color: aliceblue;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.left {
+  margin-right: 5px;
+}
+.width {
+  width: 300px;
+}
+.left-15 {
+  margin-right: 50px;
+}
+
+.carousel-caption {
+  height: 40vh;
+  top: 10%;
+  position: absolute;
+  right: 15%;
+  bottom: 0;
+  left: 15%;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.carousel-caption h1 {
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+/* .carousel-item {
+  height: 70vh;
+} */
+
+/* @media only screen and (max-width: 600px) {
+  .carousel-item {
+    height: 90vh;
+  }
+} */
+/* 
+.carousel-caption {
+  right: 0;
+  bottom: 0;
+  left: 0;
+} */
+.carousel-inner {
+  max-height: 70vh !important;
+}
+
+/* .heigth {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+} */
