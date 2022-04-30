@@ -48,7 +48,7 @@ function Stocks() {
   let uniqueOptions = getStocksIndustry(rowData);
   let stocksList = filterStocks(rowData, searchSymbol, searchIndustry);
   let symbolList = getStocksSymbol(rowData);
-  console.log("check" + symbolList);
+
   const columns = [
     {
       headername: "Symbol",

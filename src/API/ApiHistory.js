@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 const API_KEY = "0dd0c19136f01040874e4d1027257bfd";
 
-function SearchApiHistory(search) {
+function SearchApiHistory(name, search) {
   const [loading, setLoading] = useState(true);
   const [rowData, setData] = useState([]);
   const [error, setError] = useState(null);
-  const location = useLocation();
-  const name = location.state.name;
+  //const location = useLocation();
+  //const name = location.state.name;
 
   useEffect(() => {
     (async () => {
@@ -30,6 +30,10 @@ function SearchApiHistory(search) {
 
 async function getDataHistory(symbol, dateSearch) {
   let url = "";
+  console.log("110" + symbol);
+  // if (symbol === "") {
+  //   symbol = "AMAT";
+  // }
   if (
     dateSearch === "" ||
     dateSearch.toISOString().slice(0, 10) ===

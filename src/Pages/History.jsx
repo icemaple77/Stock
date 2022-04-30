@@ -1,11 +1,21 @@
 import SearchApiHistory from "../API/ApiHistory";
 import SearchApiQuote from "../API/ApiQuote";
+import SearchBar from "../Components/SearchBar";
 import Tables from "../Components/Tables";
 import Charts from "../Components/Charts";
 import MyDatePicker from "../Components/MyDatePicker";
 import QuoteDisplay from "../Components/QuoteDisplay";
+import symbolList from "./Stocks";
 import { useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  ButtonToolbar,
+  InputGroup,
+  ButtonGroup,
+} from "react-bootstrap";
+import { useLocation } from "react-router-dom";
 
 function getQuoteInfo(data) {
   const dates = data.map((history) => history.date);
@@ -24,10 +34,23 @@ function getQuoteInfo(data) {
 }
 
 function PriceHistory() {
+  // const location = useLocation();
+  // if (location.state.name === null) {
+  //   location.state.name = "AMAT";
+  // }
+  // const symbol = location.state.name;
+  const symbol = "AMAT";
+  // console.log("120" + location.state.name);
   const [searchDate, setSearchDate] = useState("");
-  const { loading, rowData, name, error } = SearchApiHistory(searchDate);
+  // const [searchSymbol, setSearchSymbol] = useState("");
+
+  const { loading, rowData, name, error } = SearchApiHistory(
+    symbol,
+    searchDate
+  );
   const { dates, open, high, low, volumes } = getQuoteInfo(rowData);
-  const { loadingQ, rowDataQ, errorQ } = SearchApiQuote(name);
+  const { loadingQ, rowDataQ, errorQ } = SearchApiQuote(symbol);
+
   const columns = [
     {
       headername: "Date",
@@ -84,7 +107,19 @@ function PriceHistory() {
             <p className="title">History of {name}</p>
           </Row>
           <Row>
-            <MyDatePicker onSubmit={setSearchDate} />
+            <ButtonToolbar
+              className="justify-content-between"
+              aria-label="Toolbar with Button groups"
+            >
+              <InputGroup>
+                <InputGroup.Text id="btnGroupAddon">Stock:</InputGroup.Text>
+                {/* <SearchBar options={symbolList} /> */}
+              </InputGroup>
+              <ButtonGroup aria-label="First group">
+                <InputGroup.Text id="btnGroupAddon">Date:</InputGroup.Text>
+                <MyDatePicker onSubmit={setSearchDate} />
+              </ButtonGroup>
+            </ButtonToolbar>
           </Row>
           <Row>
             <Col>

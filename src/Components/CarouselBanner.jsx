@@ -24,7 +24,11 @@ function CarouselBanner() {
               >
                 Stocks
               </a>
-              <a class="btn btn-outline-light btn-lg" role="button">
+              <a
+                class="btn btn-outline-light btn-lg"
+                href="/history"
+                role="button"
+              >
                 History
               </a>
             </p>
@@ -47,7 +51,11 @@ function CarouselBanner() {
               >
                 Stocks
               </a>
-              <a class="btn btn-outline-light btn-lg" role="button">
+              <a
+                class="btn btn-outline-light btn-lg"
+                href="/history"
+                role="button"
+              >
                 History
               </a>
             </p>
@@ -72,7 +80,11 @@ function CarouselBanner() {
               >
                 Stocks
               </a>
-              <a class="btn btn-outline-light btn-lg" role="button">
+              <a
+                class="btn btn-outline-light btn-lg"
+                href="/history"
+                role="button"
+              >
                 History
               </a>
             </p>
