@@ -1,29 +1,27 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-const API_KEY = "1031bcaf47ced35f5adf93ebd56dee09";
 
-function SearchApiHistory(name, search) {
+const API_KEY = "0dd0c19136f01040874e4d1027257bfd";
+
+function SearchApiHistory(symbol, dateSearch) {
   const [loading, setLoading] = useState(true);
   const [rowData, setData] = useState([]);
   const [error, setError] = useState(null);
-  //const location = useLocation();
-  //const name = location.state.name;
+  console.log("110" + symbol);
 
   useEffect(() => {
     (async () => {
       try {
-        setData(await getDataHistory(name, search));
+        setData(await getDataHistory(symbol, dateSearch));
         setLoading(false);
       } catch (err) {
         setError(err);
-        setLoading(false);
+        //setLoading(false);
       }
     })();
-  }, [search]);
+  }, [symbol, dateSearch]);
   return {
     loading,
     rowData,
-    name,
     error,
   };
 }
@@ -31,9 +29,6 @@ function SearchApiHistory(name, search) {
 async function getDataHistory(symbol, dateSearch) {
   let url = "";
   console.log("110" + symbol);
-  // if (symbol === "") {
-  //   symbol = "AMAT";
-  // }
   if (
     dateSearch === "" ||
     dateSearch.toISOString().slice(0, 10) ===
@@ -55,6 +50,8 @@ async function getDataHistory(symbol, dateSearch) {
       open: history.open,
       low: history.low,
       high: history.high,
+      close: history.close,
+
       volume: history.volume,
     };
   });

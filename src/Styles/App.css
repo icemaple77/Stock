@@ -40,7 +40,11 @@ h3 {
   height: 30px;
 }
 .h10 {
-  height: 10px;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 16px;
+  text-align: left;
 }
 .quotetable {
   text-align: left;
@@ -90,7 +94,7 @@ h3 {
 
 .carousel-caption {
   height: 40vh;
-  top: 17%;
+  top: 16%;
   position: absolute;
   right: 15%;
   bottom: 0;
@@ -106,27 +110,10 @@ h3 {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-/* .carousel-item {
-  height: 70vh;
-} */
-
-/* @media only screen and (max-width: 600px) {
-  .carousel-item {
-    height: 90vh;
-  }
-} */
-/* 
-.carousel-caption {
-  right: 0;
-  bottom: 0;
-  left: 0;
-} */
 .carousel-inner {
   max-height: 70vh !important;
 }
-
-/* .heigth {
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-} */
+.size {
+  max-height: 50vh;
+  color: rgb(179, 255, 0);
+}

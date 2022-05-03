@@ -22,6 +22,7 @@ function SelectBar(props) {
       </Dropdown.Item>
       {props.options.map((title) => (
         <Dropdown.Item
+          key={title}
           eventKey={title}
           onClick={(event) => {
             setInnerSearch(event.target.textContent);

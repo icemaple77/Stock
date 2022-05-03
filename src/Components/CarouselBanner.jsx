@@ -11,25 +11,18 @@ function CarouselBanner() {
       <Carousel.Item>
         <img className="d-block w-100" src={Banner} alt="First slide" />
         <Carousel.Caption className="carouselcaption">
-          <div class="jumbotron">
-            <h1 class="display-4">Stock Price</h1>
-            <p class="lead">Welcome to the Stock Market Portal</p>
-            <hr class="my-4" />
+          <div className="jumbotron">
+            <h1 className="display-4">Stock Price</h1>
+            <p className="lead">Welcome to the Stock Market Portal</p>
+
             <p>Click on stocks to see the available companies.</p>
-            <p class="lead">
+            <p className="lead">
               <a
-                class="btn btn-outline-light btn-lg left-15"
+                className="btn btn-outline-light btn-lg left-15"
                 href="/stocks"
                 role="button"
               >
                 Stocks
-              </a>
-              <a
-                class="btn btn-outline-light btn-lg"
-                href="/history"
-                role="button"
-              >
-                History
               </a>
             </p>
           </div>
@@ -38,25 +31,18 @@ function CarouselBanner() {
       <Carousel.Item>
         <img className="d-block w-100" src={Banner2} alt="First slide" />
         <Carousel.Caption className="carouselcaption">
-          <div class="jumbotron">
-            <h1 class="display-4">Stock Quote</h1>
-            <p class="lead">Welcome to the Stock Market Portal</p>
-            <hr class="my-4" />
+          <div className="jumbotron">
+            <h1 className="display-4">Stock Quote</h1>
+            <p className="lead">Welcome to the Stock Market Portal</p>
+
             <p>We also provide the quote for each stocks.</p>
-            <p class="lead">
+            <p className="lead">
               <a
-                class="btn btn-outline-light btn-lg left-15"
+                className="btn btn-outline-light btn-lg left-15"
                 href="/stocks"
                 role="button"
               >
                 Stocks
-              </a>
-              <a
-                class="btn btn-outline-light btn-lg"
-                href="/history"
-                role="button"
-              >
-                History
               </a>
             </p>
           </div>
@@ -65,27 +51,19 @@ function CarouselBanner() {
       <Carousel.Item>
         <img className="d-block w-100" src={Banner3} alt="First slide" />
         <Carousel.Caption className="carouselcaption">
-          <div class="jumbotron">
-            <h1 class="display-4">History Price</h1>
-            <p class="lead">Welcome to the Stock Market Portal</p>
-            <hr class="my-4" />
+          <div className="jumbotron">
+            <h1 className="display-4">History Price</h1>
+            <p className="lead">Welcome to the Stock Market Portal</p>
             <p>
               History might help you to see the 100 days log of each stocks.
             </p>
-            <p class="lead">
+            <p className="lead">
               <a
-                class="btn btn-outline-light btn-lg left-15"
+                className="btn btn-outline-light btn-lg left-15"
                 href="/stocks"
                 role="button"
               >
                 Stocks
-              </a>
-              <a
-                class="btn btn-outline-light btn-lg"
-                href="/history"
-                role="button"
-              >
-                History
               </a>
             </p>
           </div>

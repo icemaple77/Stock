@@ -27,19 +27,48 @@ function Charts(props) {
     datasets: [
       {
         type: "line",
-        label: props.title + "(Line)",
-        data: props.data,
+        label: "open",
+        data: props.open,
         fill: false,
-        borderColor: props.color,
-        backgroundColor: props.color,
+        borderColor: "rgba(179, 255, 0, 1)",
+        backgroundColor: "rgba(179, 255, 0, 0.2)",
+        yAxisID: "A",
+      },
+      {
+        type: "line",
+        label: "close",
+        data: props.close,
+        fill: false,
+        borderColor: "rgba(255, 115, 0,1)",
+        backgroundColor: "rgba(255, 115, 0, 0.2)",
+        yAxisID: "A",
+      },
+      {
+        type: "line",
+        label: "high",
+        data: props.high,
+        fill: false,
+        borderColor: "rgba(0, 255, 0, 1)",
+        backgroundColor: "rgba(0, 255, 0, 0.2)",
+        yAxisID: "A",
+      },
+      {
+        type: "line",
+        label: "low",
+        data: props.low,
+        fill: false,
+        borderColor: "rgba(255, 0, 0, 1)",
+        backgroundColor: "rgba(255, 0, 0, 0.2)",
+        yAxisID: "A",
       },
       {
         type: "bar",
-        label: props.title + "(Bar)",
-        data: props.data,
+        label: "volumes",
+        data: props.volumes,
         fill: false,
-        borderColor: "#d1d1d1fa",
-        backgroundColor: "#d1d1d1fa",
+        borderColor: "rgba(255, 2, 2, 1)",
+        backgroundColor: "rgba(0, 153, 255, 0.212)",
+        yAxisID: "B",
       },
     ],
   };
@@ -51,7 +80,29 @@ function Charts(props) {
   } else {
     return (
       <div>
-        <Chart type="bar" data={data} />
+        <Chart
+          type="bar"
+          height={400}
+          width={600}
+          data={data}
+          options={{
+            maintainAspectRatio: false,
+            scales: {
+              A: {
+                type: "linear",
+                position: "left",
+              },
+              B: {
+                type: "linear",
+                position: "right",
+                ticks: {
+                  max: 1,
+                  min: 0,
+                },
+              },
+            },
+          }}
+        />
       </div>
     );
   }

@@ -1,13 +1,20 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Navbar, Container, Nav } from "react-bootstrap";
+import {
+  Navbar,
+  Container,
+  Nav,
+  Form,
+  FormControl,
+  Button,
+} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Styles/App.css";
 import Home from "../Pages/Home";
 import Stocks from "../Pages/Stocks";
-import History from "../Pages/History";
 import PriceHistory from "../Pages/History";
 import GetFooter from "../Components/Footer";
 import logo from "../Images/logo.png";
+import SearchHistory from "./SearchHistory";
 function NavigationBar() {
   return (
     <Router>
@@ -21,18 +28,17 @@ function NavigationBar() {
             <Nav className="me-auto">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/stocks">Stocks</Nav.Link>
-              <Nav.Link href="/history">History</Nav.Link>
             </Nav>
             <Nav>
               <Nav.Link>Have a nice day!</Nav.Link>
             </Nav>
+            <SearchHistory />
           </Navbar.Collapse>
         </Container>
       </Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/stocks" element={<Stocks />} />
-        <Route path="/history" element={<History />} />
         <Route path="/history/:symbol" element={<PriceHistory />} />
       </Routes>
       <GetFooter />
