@@ -7,22 +7,7 @@ import QuoteDisplay from "../Components/QuoteDisplay";
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
-// function getQuoteInfo(data) {
-//   const dates = data.map((history) => history.date);
-//   const open = data.map((history) => history.open);
-//   const high = data.map((history) => history.high);
-//   const low = data.map((history) => history.low);
 
-//   const volumes = data.map((history) => history.volume);
-
-//   return {
-//     dates,
-//     open,
-//     high,
-//     low,
-//     volumes,
-//   };
-// }
 function getHistoryInfo(data) {
   const dates = data.map((history) => history.date);
   const open = data.map((history) => history.open);
@@ -142,7 +127,7 @@ function PriceHistory() {
               clickable={false}
               columns={columns}
               rows={rowData}
-              style={"table_history"}
+              state={"table_history"}
             />
           </Row>
         </Container>
