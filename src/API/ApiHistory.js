@@ -6,7 +6,6 @@ function SearchApiHistory(symbol, dateSearch) {
   const [loading, setLoading] = useState(true);
   const [rowData, setData] = useState([]);
   const [error, setError] = useState(null);
-  console.log("110" + symbol);
 
   useEffect(() => {
     (async () => {
@@ -28,7 +27,7 @@ function SearchApiHistory(symbol, dateSearch) {
 
 async function getDataHistory(symbol, dateSearch) {
   let url = "";
-  console.log("110" + symbol);
+
   if (
     dateSearch === "" ||
     dateSearch.toISOString().slice(0, 10) ===

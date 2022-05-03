@@ -1,24 +1,7 @@
-import {
-  Chart as ChartJS,
-  LinearScale,
-  CategoryScale,
-  BarElement,
-  PointElement,
-  LineElement,
-  Legend,
-  Tooltip,
-} from "chart.js";
+import { Chart as ChartJS, registerables } from "chart.js";
 import { Chart } from "react-chartjs-2";
 
-ChartJS.register(
-  LinearScale,
-  CategoryScale,
-  BarElement,
-  PointElement,
-  LineElement,
-  Legend,
-  Tooltip
-);
+ChartJS.register(...registerables);
 
 function Charts(props) {
   const labels = props.date;
@@ -29,7 +12,7 @@ function Charts(props) {
         type: "line",
         label: "open",
         data: props.open,
-        fill: false,
+        borderWidth: 0.5,
         borderColor: "rgba(179, 255, 0, 1)",
         backgroundColor: "rgba(179, 255, 0, 0.2)",
         yAxisID: "A",
@@ -38,7 +21,7 @@ function Charts(props) {
         type: "line",
         label: "close",
         data: props.close,
-        fill: false,
+        borderWidth: 0.5,
         borderColor: "rgba(255, 115, 0,1)",
         backgroundColor: "rgba(255, 115, 0, 0.2)",
         yAxisID: "A",
@@ -47,7 +30,7 @@ function Charts(props) {
         type: "line",
         label: "high",
         data: props.high,
-        fill: false,
+        borderWidth: 0.5,
         borderColor: "rgba(0, 255, 0, 1)",
         backgroundColor: "rgba(0, 255, 0, 0.2)",
         yAxisID: "A",
@@ -56,7 +39,7 @@ function Charts(props) {
         type: "line",
         label: "low",
         data: props.low,
-        fill: false,
+        borderWidth: 0.5,
         borderColor: "rgba(255, 0, 0, 1)",
         backgroundColor: "rgba(255, 0, 0, 0.2)",
         yAxisID: "A",
@@ -65,9 +48,9 @@ function Charts(props) {
         type: "bar",
         label: "volumes",
         data: props.volumes,
-        fill: false,
-        borderColor: "rgba(255, 2, 2, 1)",
-        backgroundColor: "rgba(0, 153, 255, 0.212)",
+        borderWidth: 0.5,
+        borderColor: "rgba(7, 131, 247, 1)",
+        backgroundColor: "rgba(0, 153, 255, 0.2)",
         yAxisID: "B",
       },
     ],
@@ -81,7 +64,6 @@ function Charts(props) {
     return (
       <div>
         <Chart
-          type="bar"
           height={400}
           width={600}
           data={data}
@@ -95,10 +77,6 @@ function Charts(props) {
               B: {
                 type: "linear",
                 position: "right",
-                ticks: {
-                  max: 1,
-                  min: 0,
-                },
               },
             },
           }}

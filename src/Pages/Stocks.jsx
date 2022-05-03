@@ -51,7 +51,7 @@ function Stocks() {
 
   const columns = [
     {
-      headername: "Symbol",
+      headerName: "Symbol",
       field: "symbol",
       resizable: true,
       flex: 1,
@@ -59,7 +59,7 @@ function Stocks() {
       filter: true,
     },
     {
-      headername: "Name",
+      headerName: "Name",
       field: "name",
       resizable: true,
       flex: 2,
@@ -67,7 +67,7 @@ function Stocks() {
       filter: true,
     },
     {
-      headername: "Industry",
+      headerName: "Industry",
       field: "industry",
       resizable: true,
       flex: 2,

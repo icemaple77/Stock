@@ -46,21 +46,14 @@ function PriceHistory() {
   const location = useLocation();
   const symbol = location.state.name;
 
-  console.log("120" + symbol);
-  const { loading, rowData, name, error } = SearchApiHistory(
-    symbol,
-    searchDate
-  );
+  const { loading, rowData, error } = SearchApiHistory(symbol, searchDate);
   const { loadingQ, rowDataQ, errorQ } = SearchApiQuote(symbol);
-  // const { dates, open, high, low, volumes } = getQuoteInfo(rowDataQ);
+
   const { dates, open, high, low, close, volumes } = getHistoryInfo(rowData);
-  // console.log("130" + rowData[1].date);
-  // console.log("140" + dates);
-  console.log(rowData);
-  // const newDate = datesH.reverse();
+
   const columns = [
     {
-      headername: "Date",
+      headerName: "Date",
       field: "date",
       resizable: true,
       flex: 1,
@@ -68,7 +61,7 @@ function PriceHistory() {
       filter: true,
     },
     {
-      headername: "Open",
+      headerName: "Open",
       field: "open",
       resizable: true,
       flex: 2,
@@ -76,7 +69,7 @@ function PriceHistory() {
       filter: true,
     },
     {
-      headername: "High",
+      headerName: "High",
       field: "high",
       resizable: true,
       flex: 2,
@@ -84,7 +77,7 @@ function PriceHistory() {
       filter: true,
     },
     {
-      headername: "Low",
+      headerName: "Low",
       field: "low",
       resizable: true,
       flex: 2,
@@ -92,7 +85,7 @@ function PriceHistory() {
       filter: true,
     },
     {
-      headername: "Close",
+      headerName: "Close",
       field: "close",
       resizable: true,
       flex: 2,
@@ -100,7 +93,7 @@ function PriceHistory() {
       filter: true,
     },
     {
-      headername: "Volume",
+      headerName: "Volume",
       field: "volume",
       resizable: true,
       flex: 2,
@@ -136,11 +129,11 @@ function PriceHistory() {
             <Col md lg={8}>
               <Charts
                 date={dates.reverse()}
-                open={open}
-                low={low}
-                high={high}
-                close={close}
-                volumes={volumes}
+                open={open.reverse()}
+                low={low.reverse()}
+                high={high.reverse()}
+                close={close.reverse()}
+                volumes={volumes.reverse()}
               />
             </Col>
           </Row>
