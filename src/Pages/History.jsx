@@ -127,7 +127,7 @@ function PriceHistory() {
               clickable={false}
               columns={columns}
               rows={rowData}
-              state={"table_history"}
+              state={"table_history "}
             />
           </Row>
         </Container>

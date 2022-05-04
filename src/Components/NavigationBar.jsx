@@ -12,22 +12,20 @@ function NavigationBar() {
   return (
     <Router>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand>
-            <img src={logo} alt="logo" />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/stocks">Stocks</Nav.Link>
-            </Nav>
-            <Nav>
-              <Nav.Link>Have a nice day!</Nav.Link>
-            </Nav>
-            <SearchHistory />
-          </Navbar.Collapse>
-        </Container>
+        <Navbar.Brand>
+          <img src={logo} alt="logo" />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/stocks">Stocks</Nav.Link>
+          </Nav>
+          <Nav>
+            <Nav.Link>Have a nice day!</Nav.Link>
+          </Nav>
+          <SearchHistory />
+        </Navbar.Collapse>
       </Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
