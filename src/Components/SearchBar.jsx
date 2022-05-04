@@ -5,6 +5,13 @@ function SearchBar(props) {
   const [innerSearch, setInnerSearch] = useState("");
   return (
     <Select
+      className="basic-single"
+      classNamePrefix="select"
+      defaultValue={props.options[0]}
+      isDisabled={false}
+      isClearable={true}
+      isSearchable={true}
+      name="color"
       placeholder={"Symbol Search"}
       options={props.options}
       theme={(theme) => ({
