@@ -7,22 +7,7 @@ import QuoteDisplay from "../Components/QuoteDisplay";
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
-// function getQuoteInfo(data) {
-//   const dates = data.map((history) => history.date);
-//   const open = data.map((history) => history.open);
-//   const high = data.map((history) => history.high);
-//   const low = data.map((history) => history.low);
 
-//   const volumes = data.map((history) => history.volume);
-
-//   return {
-//     dates,
-//     open,
-//     high,
-//     low,
-//     volumes,
-//   };
-// }
 function getHistoryInfo(data) {
   const dates = data.map((history) => history.date);
   const open = data.map((history) => history.open);
@@ -40,16 +25,34 @@ function getHistoryInfo(data) {
     volumes,
   };
 }
+function filterHistory(data, dateSearch) {
+  let finalData = [];
+  if (dateSearch > new Date()) {
+    return (finalData = []);
+  } else if (
+    dateSearch === "" ||
+    dateSearch.toISOString().slice(0, 10) ===
+      new Date().toISOString().slice(0, 10)
+  ) {
+    return (finalData = data);
+  } else {
+    finalData = data.filter((history) => {
+      return history.date >= dateSearch.toISOString().slice(0, 10);
+    });
+    return finalData;
+  }
+}
 
 function PriceHistory() {
-  const [searchDate, setSearchDate] = useState("");
   const location = useLocation();
   const symbol = location.state.name;
-
-  const { loading, rowData, error } = SearchApiHistory(symbol, searchDate);
+  const [searchDate, setSearchDate] = useState("");
+  console.log(searchDate);
+  const { loading, rowData, error } = SearchApiHistory(symbol);
   const { loadingQ, rowDataQ, errorQ } = SearchApiQuote(symbol);
-
-  const { dates, open, high, low, close, volumes } = getHistoryInfo(rowData);
+  let historyList = filterHistory(rowData, searchDate);
+  const { dates, open, high, low, close, volumes } =
+    getHistoryInfo(historyList);
 
   const columns = [
     {
@@ -141,8 +144,8 @@ function PriceHistory() {
             <Tables
               clickable={false}
               columns={columns}
-              rows={rowData}
-              style={"table_history"}
+              rows={historyList}
+              style={`${"table_history"}`}
             />
           </Row>
         </Container>
