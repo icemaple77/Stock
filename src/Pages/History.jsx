@@ -53,7 +53,6 @@ function PriceHistory() {
   let historyList = filterHistory(rowData, searchDate);
   const { dates, open, high, low, close, volumes } =
     getHistoryInfo(historyList);
-  console.log(rowDataQ);
 
   const columns = [
     {
@@ -124,7 +123,9 @@ function PriceHistory() {
           <Row>
             <Col>
               <Row>
-                <h3>Quote of {rowDataQ[0].name}</h3>
+                <div className="table">
+                  <h3>Quote of {rowDataQ[0].name}</h3>
+                </div>
               </Row>
               <Row>
                 <QuoteDisplay data={rowDataQ} />
@@ -142,12 +143,14 @@ function PriceHistory() {
             </Col>
           </Row>
           <Row>
-            <Tables
-              clickable={false}
-              columns={columns}
-              rows={historyList}
-              style={`${"table_history"}`}
-            />
+            <div className="table">
+              <Tables
+                clickable={false}
+                columns={columns}
+                rows={historyList}
+                style={`${"table_history"}`}
+              />
+            </div>
           </Row>
         </Container>
       </div>
