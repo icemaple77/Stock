@@ -47,12 +47,13 @@ function PriceHistory() {
   const location = useLocation();
   const symbol = location.state.name;
   const [searchDate, setSearchDate] = useState("");
-  console.log(searchDate);
+
   const { loading, rowData, error } = SearchApiHistory(symbol);
   const { loadingQ, rowDataQ, errorQ } = SearchApiQuote(symbol);
   let historyList = filterHistory(rowData, searchDate);
   const { dates, open, high, low, close, volumes } =
     getHistoryInfo(historyList);
+  console.log(rowDataQ);
 
   const columns = [
     {
@@ -115,7 +116,7 @@ function PriceHistory() {
       <div>
         <Container>
           <Row>
-            <p className="title">History of {symbol}</p>
+            <p className="title">History of {rowDataQ[0].name}</p>
           </Row>
           <Row>
             <MyDatePicker onSubmit={setSearchDate} />
@@ -123,7 +124,7 @@ function PriceHistory() {
           <Row>
             <Col>
               <Row>
-                <h3>Quote of {symbol}</h3>
+                <h3>Quote of {rowDataQ[0].name}</h3>
               </Row>
               <Row>
                 <QuoteDisplay data={rowDataQ} />
